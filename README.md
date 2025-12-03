@@ -57,7 +57,7 @@
           1.Model
             Yang bertanggung jawab kepada struktur data, operasi CRUD ke database, koneksi database
       
-         2. View
+          2.View
              Bagian yang menampilkan data ke pengguna.View hanya menerima data melalui
              viewModel dan tidak langsung berhubungan dengan database
 
@@ -68,26 +68,25 @@
           
 ## Alur Program:
 
-    - User mengakses melalui index.php
-    
-    - Index memanggil viewmodel
+    -User mengakses melalui index.php
+    -Index memanggil viewmodel
        Contoh: jika entity=buku, maka index memanggil BukuViewModel
        ViewModel bertugas mengambil data dari Model dan menyiapkannya ke View
        
-    - ViewModel mengambil atau mengolah data dari Model
+    -ViewModel mengambil atau mengolah data dari Model
        Model melakukan query database menggunakan PDO  
        contoh: Buku->getAll() 
                Ulasan->getByBukuId($id_buku)   
                
-    - View menerima data dari ViewModel
-       view menampilkan:  daftar buku
+    -View menerima data dari ViewModel
+      view menampilkan: daftar buku
                          detail buku 
                          daftar pengguna
                          daftar status bacaan
                          daftar ulasan
                          form tambah/edit data
                            
-   - User melakukan aksi (CRUD) Contoh alur tombol:
+    -User melakukan aksi (CRUD) Contoh alur tombol:
      
       Tambah Buku → entity=buku&action=add
       Edit Status Bacaan → entity=status&action=edit&id=
