@@ -50,22 +50,53 @@
       -favorite_quote, queotos favorit yang disuka dari buku yang dibaca
 
 
-         Peogram menggunakan pola arsitektur MVVM yang memiliki komponen yang terdiri dari:
+       Peogram menggunakan pola arsitektur MVVM yang memiliki komponen yang terdiri dari:
       
           ### Model
+      
           Yang bertanggung jawab kepada struktur data, operasi CRUD ke database, koneksi database
       
           ### View
+      
           Bagian yang menampilkan data ke pengguna.View hanya menerima data melalui
           viewModel dan tidak langsung berhubungan dengan database
 
           ### ViewModel
+      
            Menjadi pengelola state, pemroses data, dan mediator antara View dan Model. ViewModel
            memungkinkan UI untuk bereaksi secara otomatis terhadap perubahan data melalui data binding
           
           
 
 ## Alur Program:
+
+    -user mengakses melalui index.php
+    -index memanggil viewmodel
+      Contoh: jika entity=buku, maka index memanggil BukuViewModel
+      ViewModel bertugas mengambil data dari Model dan menyiapkannya ke View
+    -ViewModel mengambil atau mengolah data dari Model
+      Model melakukan query database menggunakan PDO.
+      Contoh: Buku->getAll() 
+              Ulasan->getByBukuId($id_buku)
+    -View menerima data dari ViewModel
+      View menampilkan:  daftar buku
+                         detail buku 
+                         daftar pengguna
+                         daftar status bacaan
+                         daftar ulasan
+                         form tambah/edit data
+                           
+   -User melakukan aksi (CRUD) Contoh alur tombol:
+      Tambah Buku → entity=buku&action=add
+      Edit Status Bacaan → entity=status&action=edit&id=
+      Lihat Ulasan Buku → entity=ulasan&action=list&id_buku=.
+      Index.php memproses aksi tersebut, lalu:
+      Memanggil fungsi ViewModel → Model (insert/update/delete)
+   
+
+      
+                              
+      
 
 
 
