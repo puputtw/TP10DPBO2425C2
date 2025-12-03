@@ -54,14 +54,14 @@
 
        Peogram menggunakan pola arsitektur MVVM yang memiliki komponen yang terdiri dari:
       
-          Model
+          1.Model
             Yang bertanggung jawab kepada struktur data, operasi CRUD ke database, koneksi database
       
-          View
+         2. View
              Bagian yang menampilkan data ke pengguna.View hanya menerima data melalui
              viewModel dan tidak langsung berhubungan dengan database
 
-           ViewModel
+          3. ViewModel
               Menjadi pengelola state, pemroses data, dan mediator antara View dan Model. ViewModel
               memungkinkan UI untuk bereaksi secara otomatis terhadap perubahan data melalui data binding
           
@@ -69,13 +69,16 @@
 ## Alur Program:
 
     - User mengakses melalui index.php
+    
     - Index memanggil viewmodel
        Contoh: jika entity=buku, maka index memanggil BukuViewModel
        ViewModel bertugas mengambil data dari Model dan menyiapkannya ke View
+       
     - ViewModel mengambil atau mengolah data dari Model
        Model melakukan query database menggunakan PDO  
        contoh: Buku->getAll() 
-               Ulasan->getByBukuId($id_buku)        
+               Ulasan->getByBukuId($id_buku)   
+               
     - View menerima data dari ViewModel
        view menampilkan:  daftar buku
                          detail buku 
