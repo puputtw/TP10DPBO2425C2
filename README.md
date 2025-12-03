@@ -17,11 +17,13 @@
 ## Tabel yang dibuat:
 
    1. Tabel pengguna
+      
       tabel ini menyimpan informasi akun pengguna yaitu:
       -nama
       -email
       
    2. Tabel Buku
+    
       tabel yang menyimpan seluruh data buku milik pengguna, atribut yang ada yaitu:
       -id_buku
       -judul
@@ -30,6 +32,7 @@
       -genre
 
    3. Tabel StatusBacaan
+      
       tabel yang mencatatat progres user membaca buku, terdiri dari:
       -id_status_bacaan
       -id_pengguna yang mana memiliki relasi foreign key ke tabel penggguna
@@ -38,7 +41,8 @@
       -start_date, tanggal mulai baca atau rencana baca
       -finish_date, tanggal selsai baca ynag mana juga bisa null jika belum selsai membaca suatu buku
 
-   4. Tabel Ulasan, yang mana menyimpan review atau catatan pembaca mengenai buku yang dibacanya
+   5. Tabel Ulasan, yang mana menyimpan review atau catatan pembaca mengenai buku yang dibacanya
+      
       -id_ulasan
       -id_buku relasi fk ke tabel buku
       -rating, dari 1-5 pada sebuah buku yang dibaca
@@ -46,17 +50,17 @@
       -favorite_quote, queotos favorit yang disuka dari buku yang dibaca
 
 
-      Peogram menggunakan pola arsitektur MVVM yang memiliki komponen yang terdiri dari:
+         Peogram menggunakan pola arsitektur MVVM yang memiliki komponen yang terdiri dari:
       
-      ### Model
-          yang bertanggung jawab kepada struktur data, operasi CRUD ke database, koneksi database
+          ### Model
+          Yang bertanggung jawab kepada struktur data, operasi CRUD ke database, koneksi database
       
-      ### View
-          bagian yang menampilkan data ke pengguna.View hanya menerima data melalui
+          ### View
+          Bagian yang menampilkan data ke pengguna.View hanya menerima data melalui
           viewModel dan tidak langsung berhubungan dengan database
 
-      ### ViewModel
-           menjadi pengelola state, pemroses data, dan mediator antara View dan Model. ViewModel
+          ### ViewModel
+           Menjadi pengelola state, pemroses data, dan mediator antara View dan Model. ViewModel
            memungkinkan UI untuk bereaksi secara otomatis terhadap perubahan data melalui data binding
           
           
