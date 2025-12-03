@@ -17,9 +17,10 @@
 ## Tabel yang dibuat:
 
    1. Tabel pengguna
-      Tabel ini menyimpan informasi akun pengguna yaitu:
+      tabel ini menyimpan informasi akun pengguna yaitu:
       -nama
       -email
+      
    2. Tabel Buku
       tabel yang menyimpan seluruh data buku milik pengguna, atribut yang ada yaitu:
       -id_buku
@@ -45,17 +46,18 @@
       -favorite_quote, queotos favorit yang disuka dari buku yang dibaca
 
 
-      Peogramm menggunakan pola arsitektur MVVM yang memiliki komponen yang terdiri dari:
+      Peogram menggunakan pola arsitektur MVVM yang memiliki komponen yang terdiri dari:
+      
       ### Model
           yang bertanggung jawab kepada struktur data, operasi CRUD ke database, koneksi database
       
       ### View
-         Bagian yang menampilkan data ke pengguna.View hanya menerima data melalui
-         ViewModel dan tidak langsung berhubungan dengan database
+          bagian yang menampilkan data ke pengguna.View hanya menerima data melalui
+          viewModel dan tidak langsung berhubungan dengan database
 
       ### ViewModel
-          Menjadi pengelola state, pemroses data, dan mediator antara View dan Model. ViewModel
-          memungkinkan UI untuk bereaksi secara otomatis terhadap perubahan data melalui data binding
+           menjadi pengelola state, pemroses data, dan mediator antara View dan Model. ViewModel
+           memungkinkan UI untuk bereaksi secara otomatis terhadap perubahan data melalui data binding
           
           
 
