@@ -19,10 +19,11 @@
    1. Tabel pengguna
       
       tabel ini menyimpan informasi akun pengguna yaitu:
+      -id_pengguna
       -nama
       -email
       
-   2. Tabel Buku
+   3. Tabel Buku
     
       tabel yang menyimpan seluruh data buku milik pengguna, atribut yang ada yaitu:
       -id_buku
@@ -31,7 +32,7 @@
       -hakaman
       -genre
 
-   3. Tabel StatusBacaan
+   4. Tabel StatusBacaan
       
       tabel yang mencatatat progres user membaca buku, terdiri dari:
       -id_status_bacaan
@@ -39,9 +40,10 @@
       -id_buku fk ke tabel buku
       -status, peacakan bacaan, misal: plan to read, finished dan in progres
       -start_date, tanggal mulai baca atau rencana baca
-      -finish_date, tanggal selsai baca ynag mana juga bisa null jika belum selsai membaca suatu buku
+      -finish_date, tanggal selsai baca ynag mana juga bisa null jika belum selsai membaca suatu
+        buku
 
-   5. Tabel Ulasan, yang mana menyimpan review atau catatan pembaca mengenai buku yang dibacanya
+   6. Tabel Ulasan, yang mana menyimpan review atau catatan pembaca mengenai buku yang dibacanya
       
       -id_ulasan
       -id_buku relasi fk ke tabel buku
@@ -52,36 +54,32 @@
 
        Peogram menggunakan pola arsitektur MVVM yang memiliki komponen yang terdiri dari:
       
-           Model
+          **Model
+            Yang bertanggung jawab kepada struktur data, operasi CRUD ke database, koneksi database
       
-          Yang bertanggung jawab kepada struktur data, operasi CRUD ke database, koneksi database
-      
-           View
-      
-          Bagian yang menampilkan data ke pengguna.View hanya menerima data melalui
-          viewModel dan tidak langsung berhubungan dengan database
+          **View
+             Bagian yang menampilkan data ke pengguna.View hanya menerima data melalui
+             viewModel dan tidak langsung berhubungan dengan database
 
-           ViewModel
-      
-           Menjadi pengelola state, pemroses data, dan mediator antara View dan Model. ViewModel
-           memungkinkan UI untuk bereaksi secara otomatis terhadap perubahan data melalui data binding
+           **ViewModel
+              Menjadi pengelola state, pemroses data, dan mediator antara View dan Model. ViewModel
+              memungkinkan UI untuk bereaksi secara otomatis terhadap perubahan data melalui data binding
           
           
-
 ## Alur Program:
 
-    -user mengakses melalui index.php
+    - user mengakses melalui index.php
     
-    -index memanggil viewmodel
+    - index memanggil viewmodel
       Contoh: jika entity=buku, maka index memanggil BukuViewModel
       ViewModel bertugas mengambil data dari Model dan menyiapkannya ke View
       
-    -ViewModel mengambil atau mengolah data dari Model
+    - ViewModel mengambil atau mengolah data dari Model
       Model melakukan query database menggunakan PDO.
       Contoh: Buku->getAll() 
               Ulasan->getByBukuId($id_buku)
               
-    -View menerima data dari ViewModel
+    - View menerima data dari ViewModel
       View menampilkan:  daftar buku
                          detail buku 
                          daftar pengguna
@@ -89,7 +87,7 @@
                          daftar ulasan
                          form tambah/edit data
                            
-   -User melakukan aksi (CRUD) Contoh alur tombol:
+   - User melakukan aksi (CRUD) Contoh alur tombol:
       Tambah Buku → entity=buku&action=add
       Edit Status Bacaan → entity=status&action=edit&id=
       Lihat Ulasan Buku → entity=ulasan&action=list&id_buku=.
