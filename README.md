@@ -88,6 +88,7 @@
                          form tambah/edit data
                            
    - User melakukan aksi (CRUD) Contoh alur tombol:
+     
       Tambah Buku → entity=buku&action=add
       Edit Status Bacaan → entity=status&action=edit&id=
       Lihat Ulasan Buku → entity=ulasan&action=list&id_buku=.
