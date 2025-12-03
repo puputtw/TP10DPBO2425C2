@@ -71,16 +71,18 @@
     - user mengakses melalui index.php
     
     - index memanggil viewmodel
+    
       Contoh: jika entity=buku, maka index memanggil BukuViewModel
       ViewModel bertugas mengambil data dari Model dan menyiapkannya ke View
       
     - ViewModel mengambil atau mengolah data dari Model
-      Model melakukan query database menggunakan PDO.
+      Model melakukan query database menggunakan PDO  
       Contoh: Buku->getAll() 
               Ulasan->getByBukuId($id_buku)
               
     - View menerima data dari ViewModel
-      View menampilkan:  daftar buku
+    
+      view menampilkan:  daftar buku
                          detail buku 
                          daftar pengguna
                          daftar status bacaan
