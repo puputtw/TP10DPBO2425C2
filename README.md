@@ -8,9 +8,56 @@
 ## Desain Program:
   <img width="1203" height="586" alt="Cuplikan layar 2025-12-03 070144" src="https://github.com/user-attachments/assets/4fd503c1-7086-4f0b-b220-29af44f66d2e" />
 
+   Program ini adalah sebuah sistem dengan konsep atau arsitektur MVVM yang membantu mengelola bacaan atau book tracker, program ini memungkinkan pengguna untuk mengelola:
+  - Data Buku  
+  - Status Bacaan  
+  - Ulasan / Review  
+  - Rating & Favorite Quote
+
+## Tabel yang dibuat:
+
+   1. Tabel pengguna
+      Tabel ini menyimpan informasi akun pengguna yaitu:
+      -nama
+      -email
+   2. Tabel Buku
+      tabel yang menyimpan seluruh data buku milik pengguna, atribut yang ada yaitu:
+      -id_buku
+      -judul
+      -penulis
+      -hakaman
+      -genre
+
+   3. Tabel StatusBacaan
+      tabel yang mencatatat progres user membaca buku, terdiri dari:
+      -id_status_bacaan
+      -id_pengguna yang mana memiliki relasi foreign key ke tabel penggguna
+      -id_buku fk ke tabel buku
+      -status, peacakan bacaan, misal: plan to read, finished dan in progres
+      -start_date, tanggal mulai baca atau rencana baca
+      -finish_date, tanggal selsai baca ynag mana juga bisa null jika belum selsai membaca suatu buku
+
+   4. Tabel Ulasan, yang mana menyimpan review atau catatan pembaca mengenai buku yang dibacanya
+      -id_ulasan
+      -id_buku relasi fk ke tabel buku
+      -rating, dari 1-5 pada sebuah buku yang dibaca
+      -catatan, catatan singkat tentang buku yang dibaca
+      -favorite_quote, queotos favorit yang disuka dari buku yang dibaca
 
 
+      Peogramm menggunakan pola arsitektur MVVM yang memiliki komponen yang terdiri dari:
+      ### Model
+          yang bertanggung jawab kepada struktur data, operasi CRUD ke database, koneksi database
+      
+      ### View
+         Bagian yang menampilkan data ke pengguna.View hanya menerima data melalui
+         ViewModel dan tidak langsung berhubungan dengan database
 
+      ### ViewModel
+          Menjadi pengelola state, pemroses data, dan mediator antara View dan Model. ViewModel
+          memungkinkan UI untuk bereaksi secara otomatis terhadap perubahan data melalui data binding
+          
+          
 
 ## Alur Program:
 
